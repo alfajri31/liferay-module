@@ -1,0 +1,165 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=16892, tid=0x0000000000003708
+#
+# JRE version:  (8.0_352-b08) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.352-b08 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000031c3800):  JavaThread "Unknown thread" [_thread_in_vm, id=14088, stack(0x0000000003060000,0x0000000003160000)]
+
+Stack: [0x0000000003060000,0x0000000003160000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000031c3800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=14088, stack(0x0000000003060000,0x0000000003160000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000006c2600000, size: 4058 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 75776K, used 1300K [0x000000076b780000, 0x0000000770c00000, 0x00000007c0000000)
+  eden space 65024K, 2% used [0x000000076b780000,0x000000076b8c51f8,0x000000076f700000)
+  from space 10752K, 0% used [0x0000000770180000,0x0000000770180000,0x0000000770c00000)
+  to   space 10752K, 0% used [0x000000076f700000,0x000000076f700000,0x0000000770180000)
+ ParOldGen       total 173568K, used 0K [0x00000006c2600000, 0x00000006ccf80000, 0x000000076b780000)
+  object space 173568K, 0% used [0x00000006c2600000,0x00000006c2600000,0x00000006ccf80000)
+ Metaspace       used 791K, capacity 1156K, committed 1408K, reserved 1060864K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x00000000127f0000,0x0000000012fe0000] byte_map_base: 0x000000000f1dd000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000567f7430
+ Begin Bits: [0x0000000013d30000, 0x0000000017c98000)
+ End Bits:   [0x0000000017c98000, 0x000000001bc00000)
+
+Polling page: 0x0000000001690000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000003430000, 0x00000000036a0000, 0x0000000012430000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.027 loading class java/lang/Short
+Event: 0.027 loading class java/lang/Short done
+Event: 0.027 loading class java/lang/Integer
+Event: 0.027 loading class java/lang/Integer done
+Event: 0.027 loading class java/lang/Long
+Event: 0.027 loading class java/lang/Long done
+Event: 0.028 loading class java/lang/NullPointerException
+Event: 0.028 loading class java/lang/NullPointerException done
+Event: 0.028 loading class java/lang/ArithmeticException
+Event: 0.028 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff638e20000 - 0x00007ff638e55000 	C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\bin\java.exe
+0x00007ffb12b50000 - 0x00007ffb12d48000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffb128b0000 - 0x00007ffb1296d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffb125d0000 - 0x00007ffb128a3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x0000000032ce0000 - 0x0000000032d1b000 	C:\WINDOWS\System32\cyinjct.dll
+0x00007ffb12450000 - 0x00007ffb1245c000 	C:\WINDOWS\System32\ntnativeapi.dll
+0x00007ffb12430000 - 0x00007ffb1244e000 	C:\WINDOWS\System32\cyvera.dll
+0x00007ffb123c0000 - 0x00007ffb12428000 	C:\WINDOWS\System32\cyvrtrap.dll
+0x00007ffb12240000 - 0x00007ffb122ee000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffb10d10000 - 0x00007ffb10dae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffb11430000 - 0x00007ffb114cc000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffb124a0000 - 0x00007ffb125c5000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffb12970000 - 0x00007ffb12b0e000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffb10780000 - 0x00007ffb107a2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffb10db0000 - 0x00007ffb10ddc000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffb10660000 - 0x00007ffb10774000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffb10300000 - 0x00007ffb1039d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffb103d0000 - 0x00007ffb104d0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffaf9410000 - 0x00007ffaf96aa000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffb11990000 - 0x00007ffb119c0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00000000569f0000 - 0x0000000056ac1000 	C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\jre\bin\msvcr100.dll
+0x0000000055fe0000 - 0x0000000056879000 	C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\jre\bin\server\jvm.dll
+0x00007ffb11680000 - 0x00007ffb11688000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffaed6a0000 - 0x00007ffaed6a9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffb11900000 - 0x00007ffb1196b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffaf1c70000 - 0x00007ffaf1c97000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffb067e0000 - 0x00007ffb067ea000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffb068d0000 - 0x00007ffb068df000 	C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\jre\bin\verify.dll
+0x00007ffaeb640000 - 0x00007ffaeb669000 	C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\jre\bin\java.dll
+0x00007ffb12380000 - 0x00007ffb123b7000 	c:\Program Files\Palo Alto Networks\Traps\cyjagent.dll
+0x00007ffaf2690000 - 0x00007ffaf26a6000 	C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dsass.compiler.jni.clean.temp.dir=true -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -agentpath:c:\Program Files\Palo Alto Networks\Traps\cyjagent.dll 
+java_command: com.liferay.css.builder.CSSBuilder --append-css-import-timestamps=true --base-dir=D:/liferay-development/liferay-workspace-project/modules/guestbook-web/build/tmp/copyCSS --dir-names=/ --excludes=**/_diffs/**,**/.sass-cache*/**,**/.sass_cache_*/**,**/_sass_cache_*/**,**/_styled/**,**/_unstyled/**,**/css/aui/**,**/css/clay/**,**/tmp/** --generate-source-map=false --import-paths=C:\Users\igtraden2672\.gradle\caches\modules-2\files-2.1\com.liferay\com.liferay.frontend.css.common\2.0.5\7d372118888da6f87992dee4deb305b2aae7e813\com.liferay.frontend.css.common-2.0.5.jar --output-dir=.sass-cache/ --precision=9 --rtl-excluded-path-regexps=
+java_class_path (initial): C:\Users\igtraden2672\.gradle\caches\modules-2\files-2.1\com.liferay\com.liferay.css.builder\3.1.0\6981351fcb284e41c5635c471baac2430abc5f1e\com.liferay.css.builder-3.1.0.jar;C:\Users\igtraden2672\.gradle\caches\modules-2\files-2.1\org.codehaus.plexus\plexus-utils\3.0.15\519b3f1fc84d3387c61a8c8e6235daf89aea4168\plexus-utils-3.0.15.jar;C:\Users\igtraden2672\.gradle\caches\modules-2\files-2.1\org.sonatype.plexus\plexus-build-api\0.0.7\e6ba5cd4bfd8de00235af936e7f63eb24ed436e6\plexus-build-api-0.0.7.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\OpenJDK\jdk-8.0.352.08-hotspot\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Java\jdk1.8.0_201\bin;C:\Users\jokoha033870\.jpm\windows\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Users\igtraden2672\AppData\Local\Microsoft\WindowsApps;C:\Users\igtraden2672\AppData\Local\Programs\Git\cmd
+USERNAME=igtraden2672
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1889)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16616660k(1360868k free), swap 28243736k(5740k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.352-b08) for windows-amd64 JRE (1.8.0_352-352-b08), built on Oct 20 2022 04:48:51 by "Administrator" with MS VC++ 10.0 (VS2010)
+
+time: Fri Dec 02 15:36:08 2022
+timezone: SE Asia Standard Time
+elapsed time: 0.067360 seconds (0d 0h 0m 0s)
+

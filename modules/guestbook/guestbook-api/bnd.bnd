@@ -1,0 +1,10 @@
+Bundle-Name: guestbook-api
+Bundle-SymbolicName: com.docs.guestbook.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.docs.guestbook.exception,\
+	com.docs.guestbook.model,\
+	com.docs.guestbook.service,\
+	com.docs.guestbook.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../guestbook-service/service.xml

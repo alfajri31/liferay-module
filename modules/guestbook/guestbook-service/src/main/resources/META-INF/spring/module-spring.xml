@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="com.docs.guestbook.service.impl.EntryLocalServiceImpl" id="com.docs.guestbook.service.EntryLocalService" />
+	<bean class="com.docs.guestbook.service.impl.EntryServiceImpl" id="com.docs.guestbook.service.EntryService" />
+	<bean class="com.docs.guestbook.service.persistence.impl.EntryPersistenceImpl" id="com.docs.guestbook.service.persistence.EntryPersistence" parent="basePersistence" />
+	<bean class="com.docs.guestbook.service.impl.GuestbookLocalServiceImpl" id="com.docs.guestbook.service.GuestbookLocalService" />
+	<bean class="com.docs.guestbook.service.impl.GuestbookServiceImpl" id="com.docs.guestbook.service.GuestbookService" />
+	<bean class="com.docs.guestbook.service.persistence.impl.GuestbookPersistenceImpl" id="com.docs.guestbook.service.persistence.GuestbookPersistence" parent="basePersistence" />
+</beans>
